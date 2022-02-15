@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdvertiserController;
+use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +24,18 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+Route::resource('advertisers', AdvertiserController::class);
+Route::get('advertisers/{advertiser}/campaigns/create', [AdvertiserController::class, 'create_campaign'])
+     ->name('advertisers.create_campaign');
+Route::put('advertisers/{advertiser}/campaigns', [AdvertiserController::class, 'store_campaign'])
+     ->name('advertisers.store_campaign');
+
+Route::resource('campaigns', CampaignController::class);
+Route::get('campaigns/{campaign}/projects/create', [CampaignController::class, 'create_project'])
+     ->name('campaigns.create_project');
+Route::put('campaigns/{campaign}/projects', [CampaignController::class, 'store_project'])
+     ->name('campaigns.store_project');
+
+Route::resource('projects', ProjectController::class);
