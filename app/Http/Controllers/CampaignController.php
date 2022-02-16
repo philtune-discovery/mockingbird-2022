@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Campaign;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CampaignController extends Controller
 {
@@ -36,6 +37,7 @@ class CampaignController extends Controller
 
         $campaign = new Campaign();
         $campaign->name = $request->name;
+        $campaign->user_id = Auth::user();
         $campaign->save();
 
         return redirect()->route('campaigns.show', $campaign);

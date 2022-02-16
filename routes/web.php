@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdvertiserController;
 use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +40,5 @@ Route::put('campaigns/{campaign}/projects', [CampaignController::class, 'store_p
      ->name('campaigns.store_project');
 
 Route::resource('projects', ProjectController::class);
+
+Route::resource('images', ImageController::class);
