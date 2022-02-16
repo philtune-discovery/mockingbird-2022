@@ -1,4 +1,19 @@
 # Mockingbird v.2022.0.1
+
+## Unique Packages For This Build
+```json
+{
+    "require": {
+        "laravel/framework": "^8.75",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "spatie/laravel-tags": "^2.7",
+        "tinify/tinify": "^1.5"
+    },
+    "require-dev": {
+        "laravel/breeze": "^1.7"
+    }
+}
+```
 ## Installation Steps
 It may be helpful to know what installation steps were taken to bootstrap this project, for example, if we need to re-do something.
 

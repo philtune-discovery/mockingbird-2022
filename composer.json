@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "philtune-discovery/mockingbird-2022",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Deliver mockups and code",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
