@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\AdvertiserController;
-use App\Http\Controllers\CampaignController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\{AdvertiserController,
+    CampaignController,
+    DeliverableController,
+    ImageController,
+    ProjectController
+};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +44,5 @@ Route::put('campaigns/{campaign}/projects', [CampaignController::class, 'store_p
 Route::resource('projects', ProjectController::class);
 
 Route::resource('images', ImageController::class);
+
+Route::resource('deliverables', DeliverableController::class);
