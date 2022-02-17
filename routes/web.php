@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{AdvertiserController,
+use App\Http\Controllers\{ClientController,
     CampaignController,
     DeliverableController,
     ImageController,
@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('welcome');
+})->middleware('guest')->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,11 +29,11 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-Route::resource('advertisers', AdvertiserController::class);
-Route::get('advertisers/{advertiser}/campaigns/create', [AdvertiserController::class, 'create_campaign'])
-     ->name('advertisers.create_campaign');
-Route::put('advertisers/{advertiser}/campaigns', [AdvertiserController::class, 'store_campaign'])
-     ->name('advertisers.store_campaign');
+Route::resource('clients', ClientController::class);
+Route::get('clients/{client}/campaigns/create', [ClientController::class, 'create_campaign'])
+     ->name('clients.create_campaign');
+Route::put('clients/{client}/campaigns', [ClientController::class, 'store_campaign'])
+     ->name('clients.store_campaign');
 
 Route::resource('campaigns', CampaignController::class);
 Route::get('campaigns/{campaign}/projects/create', [CampaignController::class, 'create_project'])

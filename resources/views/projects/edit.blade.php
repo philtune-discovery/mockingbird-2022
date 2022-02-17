@@ -2,7 +2,7 @@
 /**
  * @var Project $project
  */
-use App\Models\{Advertiser, Campaign, Project};
+use App\Models\{Client, Campaign, Project};
 
 ?>
 <x-app-layout>

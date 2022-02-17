@@ -39,7 +39,7 @@ use App\Models\Image;use Illuminate\Support\Facades\Storage;
                                 <?= round(Storage::size($image->path) / 1000) ?> KB
                             </td>
                             <td>
-                                {{ $image->project->campaign->advertisers()->first()->name }} >
+                                {{ $image->project->campaign->clients()->first()->name }} >
                                 {{ $image->project->campaign->name }} >
                                 {{ $image->project->name }}
                             </td>

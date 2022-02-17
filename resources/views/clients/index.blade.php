@@ -1,10 +1,10 @@
 <?php
-use App\Models\Advertiser;
+use App\Models\Client;
 ?>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Advertisers
+            Clients
         </h2>
     </x-slot>
 
@@ -20,27 +20,27 @@ use App\Models\Advertiser;
                             <th>Updated At</th>
                         </tr>
                         </thead>
-                        <?php foreach ( Advertiser::all() as $advertiser ) : ?>
+                        <?php foreach ( Client::all() as $client ) : ?>
                         <tr>
                             <td>
-                                <a href="{{ route('advertisers.show', $advertiser) }}"
+                                <a href="{{ route('clients.show', $client) }}"
                                    class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
-                                    <?= $advertiser->name ?>
+                                    <?= $client->name ?>
                                 </a>
                             </td>
                             <td>
-                                <?= $advertiser->created_at ?>
+                                <?= $client->created_at ?>
                             </td>
                             <td>
-                                <?= $advertiser->updated_at ?>
+                                <?= $client->updated_at ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>
                     </table>
                     <p>
-                        <a href="{{ route('advertisers.create') }}"
+                        <a href="{{ route('clients.create') }}"
                            class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
-                            Create New Advertiser
+                            Create New Client
                         </a>
                     </p>
                 </div>

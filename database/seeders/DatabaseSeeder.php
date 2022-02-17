@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Advertiser;
+use App\Models\Client;
 use App\Models\Image;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
             'password'          => Hash::make('bV@MUHl58c*^'),
             'email_verified_at' => now()
         ]);
-        $advertiser = Advertiser::create([
+        $client = Client::create([
             'name' => 'Arm & Hammer'
         ]);
-        $campaign = $advertiser->campaigns()->create([
+        $campaign = $client->campaigns()->create([
             'name'    => 'Puppy Bowl XVIII',
             'user_id' => $user->id
         ]);

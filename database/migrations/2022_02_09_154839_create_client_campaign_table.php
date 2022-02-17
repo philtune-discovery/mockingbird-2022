@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdvertiserCampaignTable extends Migration
+class CreateClientCampaignTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateAdvertiserCampaignTable extends Migration
      */
     public function up()
     {
-        Schema::create('advertiser_campaign', function (Blueprint $table) {
+        Schema::create('client_campaign', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\Campaign::class)->constrained();
-            $table->foreignIdFor(\App\Models\Advertiser::class)->constrained();
+            $table->foreignIdFor(\App\Models\Client::class)->constrained();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateAdvertiserCampaignTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('advertiser_campaign');
+        Schema::dropIfExists('client_campaign');
     }
 }
