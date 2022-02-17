@@ -32,4 +32,9 @@ class Project extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    public function deliverables():HasMany
+    {
+        return $this->hasMany(Deliverable::class);
+    }
 }

@@ -19,12 +19,12 @@ class CreateImagesTable extends Migration
             $table->id();
             $table->foreignIdFor(Project::class)
                   ->constrained();
+            $table->foreignIdFor(User::class)
+                  ->constrained();
             $table->string('label')->nullable();
             $table->string('path');
             $table->string('thumb_path');
-            $table->integer('pos');
-            $table->foreignIdFor(User::class)
-                  ->constrained();
+            $table->unsignedSmallInteger('ord');
             $table->timestamps();
             $table->softDeletes();
         });

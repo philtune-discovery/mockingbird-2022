@@ -16,8 +16,9 @@ class CreateCampaignsTable extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(User::class)
+                  ->constrained();
             $table->string('name');
-            $table->foreignIdFor(User::class);
             $table->timestamps();
             $table->softDeletes();
         });

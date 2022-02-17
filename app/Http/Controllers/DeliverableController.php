@@ -3,39 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deliverable;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DeliverableController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+
     public function index()
     {
-        //
+        return view('deliverables.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('deliverables.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(Request $request):RedirectResponse
     {
-        //
+        $request->validate([
+            'text' => 'required'
+        ]);
+
+        $deliverable = new Deliverable();
+        $deliverable->project_id = 1;
+        $deliverable->user_id = Auth::id();
+        $deliverable->text = $request->text;
+        $deliverable->save();
+
+        return redirect()->route('deliverables.index');
     }
 
     /**
@@ -72,14 +74,10 @@ class DeliverableController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Deliverable  $deliverable
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Deliverable $deliverable)
+    public function destroy(Deliverable $deliverable):RedirectResponse
     {
-        //
+        $deliverable->delete();
+
+        return redirect()->route('deliverables.index');
     }
 }

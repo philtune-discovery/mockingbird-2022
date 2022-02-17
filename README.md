@@ -6,6 +6,7 @@
     "require": {
         "laravel/framework": "^8.75",
         "league/flysystem-aws-s3-v3": "^1.0",
+        "spatie/eloquent-sortable": "^3.11",
         "spatie/laravel-tags": "^2.7",
         "tinify/tinify": "^1.5"
     },
