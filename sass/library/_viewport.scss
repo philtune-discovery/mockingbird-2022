@@ -1,0 +1,19 @@
+@function percd($x) {
+	@return strip-unit($x) / $desktop_comp_width * 100%;
+}
+
+@function percm($x) {
+	@return strip-unit($x) / $mobile_comp_width * 100%;
+}
+
+@function vwd($x) {
+	@return strip-unit($x) / $desktop_comp_width * 100vw;
+}
+
+@function vwm($x) {
+	@return strip-unit($x) / $mobile_comp_width * 100vw;
+}
+
+//@function vhd($x) {
+//	@return strip-unit($x) / $desktop_comp_height * 100vh;
+//}

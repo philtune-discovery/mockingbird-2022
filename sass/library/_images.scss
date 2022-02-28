@@ -1,0 +1,8 @@
+@mixin imgdiv($filepath, $perc: 100%) {
+	width: $perc;
+	background-image: url($filepath);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+	padding-top: image-height($filepath) / image-width($filepath) * $perc;
+}

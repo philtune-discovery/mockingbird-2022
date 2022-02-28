@@ -1,0 +1,31 @@
+$desktopMin: 1024px;
+$widescreenMin: 1400px;
+@mixin mobileMax {
+	@media ( max-width: $desktopMin - 1 ) {
+		@content;
+	}
+}
+
+@mixin desktopMin {
+	@media ( min-width: $desktopMin ) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media ( min-width: $desktopMin ) and ( max-width: $widescreenMin ) {
+		@content;
+	}
+}
+
+@mixin desktopNarrow {
+	@media ( min-width: $desktopMin ) and ( max-width: $widescreenMin ) and ( max-aspect-ratio: 1199/800 ) {
+		@content;
+	}
+}
+
+@mixin widescreen {
+	@media ( min-width: $widescreenMin ), ( min-aspect-ratio: 1200/800 ) {
+		@content;
+	}
+}

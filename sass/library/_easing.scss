@@ -1,0 +1,21 @@
+@function easing($type, $p1: 1) {
+	$map_easeOutBack: (0.34, 1.56, 0.64, 1);
+	$types: (
+			'easeInQuint': (0.64, 0, 0.78, 0),
+			'easeOutQuint': (0.22, 1, 0.36, 1),
+			'easeInOutQuint': (0.83, 0, 0.17, 1),
+			'easeOutBack': (0.34, $p1, 0.64, 1),
+	);
+	$list: map-get($types, $type);
+	$t1: nth($list, 1);
+	$p1: nth($list, 2);
+	$t2: nth($list, 3);
+	$p2: nth($list, 4);
+	$result: cubic-bezier($t1, $p1, $t2, $p2);
+	@return $result;
+}
+$easeInQuint: easing('easeInQuint');
+$easeOutQuint: easing('easeOutQuint');
+$easeInOutQuint: easing('easeInOutQuint');
+$easeOutBack: easing('easeOutBack');
+$customBounce: cubic-bezier(.85,1.71,.75,.8);

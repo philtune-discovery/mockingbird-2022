@@ -1,0 +1,125 @@
+@mixin reset {
+	box-sizing: border-box;
+	*,*:before,*:after { box-sizing: inherit }
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	img, svg {
+		display: block;
+		border: 0;
+		max-width: 100%;
+		//margin: 0 auto;
+	}
+
+	letter-spacing: normal;
+
+	//svg {
+	//	fill: currentColor;
+	//}
+	//
+	//video {
+	//	display: block;
+	//	width: 100%;
+	//	max-width: 100%;
+	//	max-height: 100%;
+	//}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	figure, fieldset, legend, button, input, textarea, ul, ol, li, h1, h2, h3, h4, h5, h6, p, blockquote {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul, ol {
+		list-style: none;
+	}
+
+	h1, h2, h3, h4, h5, h6, p {
+		//font-size: 1em;
+		//line-height: 1;
+		//font-weight: inherit;
+	}
+
+	p {
+		//line-height: unset;
+	}
+
+	sup {
+		font-size: 0.6em !important;
+		display: inline-block !important;
+		vertical-align: top !important;
+		margin-top: 0.2em !important;
+		top: auto !important;
+		line-height: 1 !important;
+	}
+
+	//fieldset {
+	//	text-align: inherit;
+	//	border: none;
+	//	legend {
+	//		border: none;
+	//	}
+	//}
+	//
+	//input, textarea {
+	//	font: inherit;
+	//	border: none;
+	//	background: none;
+	//	box-shadow: none;
+	//	border-radius: 0;
+	//}
+	//
+	//button {
+	//	display: inline-block;
+	//	font: inherit;
+	//	border: none;
+	//	background: none;
+	//	color: inherit;
+	//	text-align: inherit;
+	//	align-items: inherit;
+	//	cursor: pointer;
+	//	outline: none;
+	//}
+	//
+	//hr {
+	//	border: none;
+	//	background: none;
+	//}
+	//
+	//iframe {
+	//	display: block;
+	//	border: none;
+	//	width: 100%;
+	//}
+	//
+	//select {
+	//	border: none;
+	//	border-radius: unset;
+	//	-webkit-appearance: none;
+	//	-moz-appearance: none;
+	//	appearance: none;
+	//	font: inherit;
+	//	color: inherit;
+	//	text-transform: inherit;
+	//}
+
+	.offscreen {
+		@include hidden;
+	}
+
+	@include mobileMax {
+		.desktop_only {
+			@include hidden;
+		}
+	}
+	@include desktopMin {
+		.mobile_only {
+			@include hidden;
+		}
+	}
+}
