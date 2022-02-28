@@ -13,7 +13,7 @@ class CreateClientCampaignTable extends Migration
      */
     public function up()
     {
-        Schema::create('client_campaign', function (Blueprint $table) {
+        Schema::create('campaign_client', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\Campaign::class)->constrained();
             $table->foreignIdFor(\App\Models\Client::class)->constrained();
@@ -28,6 +28,6 @@ class CreateClientCampaignTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('client_campaign');
+        Schema::dropIfExists('campaign_client');
     }
 }

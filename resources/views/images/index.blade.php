@@ -29,14 +29,14 @@ use App\Models\Image;use Illuminate\Support\Facades\Storage;
                         <tr>
                             <td>
                                 <a href="{{ route('images.show', $image) }}">
-                                    <img src="<?= Storage::url($image->thumb_path) ?>" alt="" width="50"/>
+                                    <img src="<?= Storage::disk('s3')->url($image->thumb_path) ?>" alt="" width="50"/>
                                 </a>
                             </td>
                             <th>
                                 <a href="{{ route('images.show', $image) }}"><?= $image->label ?></a>
                             </th>
                             <td>
-                                <?= round(Storage::size($image->path) / 1000) ?> KB
+                                <?= round(Storage::disk('s3')->size($image->path) / 1000) ?> KB
                             </td>
                             <td>
                                 {{ $image->project->campaign->clients()->first()->name }} >

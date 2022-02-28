@@ -29,6 +29,9 @@
                     <x-nav-link :href="route('deliverables.index')" :active="request()->routeIs('deliverables.*')">
                         Deliverables
                     </x-nav-link>
+                    <x-nav-link :href="route('api.clients.index')">
+                        API Clients
+                    </x-nav-link>
                 </div>
             </div>
 

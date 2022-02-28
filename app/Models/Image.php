@@ -42,12 +42,12 @@ class Image extends Model implements Sortable
 
     public function getPathUrl():string
     {
-        return Storage::url($this->path);
+        return Storage::disk('s3')->url($this->path);
     }
 
     public function getThumbPathUrl():string
     {
-        return Storage::url($this->thumb_path);
+        return Storage::disk('s3')->url($this->thumb_path);
     }
 
     public function buildSortQuery():Builder

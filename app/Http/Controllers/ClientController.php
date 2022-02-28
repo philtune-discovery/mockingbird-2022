@@ -9,14 +9,9 @@ use Illuminate\Http\Request;
 class ClientController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware(['auth', 'verified']);
-    }
-
     public function index()
     {
-        return view('clients.index');
+        return view('clients.index', ['clients' => Client::all()]);
     }
 
     public function create()

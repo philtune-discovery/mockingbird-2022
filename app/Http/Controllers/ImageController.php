@@ -17,7 +17,6 @@ class ImageController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth', 'verified']);
         Tinify::setKey(env('TINIFY_API_KEY'));
     }
 
@@ -47,8 +46,8 @@ class ImageController extends Controller
                     'width'  => 200,
                     'height' => 200
                 ])->toBuffer();
-                Storage::put($path, $source->toBuffer(), 'public');
-                Storage::put($thumb_path, $thumb_path_contents, 'public');
+                Storage::disk('s3')->put($path, $source->toBuffer(), 'public');
+                Storage::disk('s3')->put($thumb_path, $thumb_path_contents, 'public');
 
                 $image = new Image();
                 $image->project_id = 999;

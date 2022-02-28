@@ -1,5 +1,8 @@
 <?php
-use App\Models\Client;
+/**
+ * @var Collection $clients
+ */
+use Illuminate\Database\Eloquent\Collection;
 ?>
 <x-app-layout>
     <x-slot name="header">
@@ -20,7 +23,7 @@ use App\Models\Client;
                             <th>Updated At</th>
                         </tr>
                         </thead>
-                        <?php foreach ( Client::all() as $client ) : ?>
+                        <?php foreach ( $clients as $client ) : ?>
                         <tr>
                             <td>
                                 <a href="{{ route('clients.show', $client) }}"
