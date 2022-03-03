@@ -2,7 +2,7 @@
 /**
  * @var \App\Models\Campaign $campaign
  */
-use App\Models\Client;
+use App\Models\Advertiser;
 
 ?>
 <x-app-layout>
@@ -26,11 +26,11 @@ use App\Models\Client;
                                      :value="$campaign->name" required autofocus/>
                         </div>
                         <div>
-                            <label for="clients" class="block font-medium text-sm text-gray-700">Clients</label>
-                            <select id="clients" name="clients[]" multiple>
-                                <?php Client::all()->each(function (Client $client) use ($campaign) { ?>
+                            <label for="advertisers" class="block font-medium text-sm text-gray-700">Advertisers</label>
+                            <select id="advertisers" name="advertisers[]" multiple>
+                                <?php Advertiser::all()->each(function (Advertiser $advertiser) use ($campaign) { ?>
                                 <option
-                                    value="{{ $client->id }}" {{ $campaign->clients->contains($client) ? 'selected' : '' }}>{{ $client->name }}</option>
+                                    value="{{ $advertiser->id }}" {{ $campaign->advertisers->contains($advertiser) ? 'selected' : '' }}>{{ $advertiser->name }}</option>
                                 <?php }) ?>
                             </select>
                         </div>

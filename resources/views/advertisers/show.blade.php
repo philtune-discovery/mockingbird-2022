@@ -1,15 +1,15 @@
 <?php
 /**
- * @var Client $client
+ * @var Advertiser $advertiser
  */
-use App\Models\Client;use App\Models\Campaign;
+use App\Models\Advertiser;use App\Models\Campaign;
 ?>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Client: {{ $client->name }}
+            Advertiser: {{ $advertiser->name }}
             <a class="underline text-sm text-gray-600 hover:text-gray-900"
-               href="{{ route('clients.edit', $client) }}">edit</a>
+               href="{{ route('advertisers.edit', $advertiser) }}">edit</a>
         </h2>
     </x-slot>
 
@@ -21,11 +21,11 @@ use App\Models\Client;use App\Models\Campaign;
                     <table>
                         <tr>
                             <th>Created at:</th>
-                            <td>{{ $client->created_at }}</td>
+                            <td>{{ $advertiser->created_at }}</td>
                         </tr>
                         <tr>
                             <th>Updated at:</th>
-                            <td>{{ $client->updated_at }}</td>
+                            <td>{{ $advertiser->updated_at }}</td>
                         </tr>
                     </table>
                     <h2>Campaigns</h2>
@@ -37,7 +37,7 @@ use App\Models\Client;use App\Models\Campaign;
                             <th>Updated At</th>
                         </tr>
                         </thead>
-                        <?php $client->campaigns->each(function(Campaign $campaign) { ?>
+                        <?php $advertiser->campaigns->each(function(Campaign $campaign) { ?>
                         <tr>
                             <td>
                                 <a href="{{ route('campaigns.show', $campaign) }}"
@@ -54,7 +54,7 @@ use App\Models\Client;use App\Models\Campaign;
                         </tr>
                         <?php }); ?>
                     </table>
-                    <a href="{{ route('clients.create_campaign', $client) }}"
+                    <a href="{{ route('advertisers.create_campaign', $advertiser) }}"
                        class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
                         Add New Campaign
                     </a>

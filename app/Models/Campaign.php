@@ -17,9 +17,9 @@ class Campaign extends Model
         'user_id'
     ];
 
-    public function clients():BelongsToMany
+    public function advertisers():BelongsToMany
     {
-        return $this->belongsToMany(Client::class)
+        return $this->belongsToMany(Advertiser::class)
                     ->withTimestamps();
     }
 

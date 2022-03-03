@@ -6,7 +6,7 @@
         <nav class="main_nav">
             <?php foreach ([
                 ['Dashboard', 'dashboard', 'dashboard', 'dashboard'],
-                ['Advertisers', 'clients.index', 'clients.*', 'advertisers'],
+                ['Advertisers', 'advertisers.index', 'advertisers.*', 'advertisers'],
                 ['Campaigns', 'campaigns.index', 'campaigns.*', 'campaigns'],
                 ['Projects', 'projects.index', 'projects.*', 'projects'],
             ] as ['0'=>$title, '1'=>$routeName, '2'=>$pattern, '3'=>$class] ) : ?>

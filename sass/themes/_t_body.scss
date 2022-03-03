@@ -1,6 +1,4 @@
 .t_body {
-    @include reset;
-    margin: 0;
     background: $bodyBg;
     color: $bodyClr;
     @extend %type-body;

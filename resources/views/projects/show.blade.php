@@ -2,7 +2,7 @@
 /**
  * @var Project $project
  */
-use App\Models\{Client, Campaign, Project};
+use App\Models\{Advertiser, Project};
 
 ?>
 <x-app-layout>
@@ -29,13 +29,13 @@ use App\Models\{Client, Campaign, Project};
                             <td>{{ $project->updated_at }}</td>
                         </tr>
                         <tr>
-                            <th>Clients:</th>
+                            <th>Advertiser:</th>
                             <td>
                                 <ul>
-                                    <?php $project->campaign->clients()->each(function(Client $client) { ?>
+                                    <?php $project->campaign->advertisers()->each(function(Advertiser $advertiser) { ?>
                                     <li>
-                                        <a href="{{ route('clients.show', $client) }}"
-                                           class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">{{ $client->name }}</a>
+                                        <a href="{{ route('advertisers.show', $advertiser) }}"
+                                           class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">{{ $advertiser->name }}</a>
                                     </li>
                                     <?php }) ?>
                                 </ul>

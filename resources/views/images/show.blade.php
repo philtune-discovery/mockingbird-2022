@@ -2,7 +2,7 @@
 /**
  * @var Image $image
  */
-use App\Models\{Client, Campaign, Image};
+use App\Models\{Advertiser, Campaign, Image};
 
 ?>
 <x-app-layout>
@@ -39,13 +39,13 @@ use App\Models\{Client, Campaign, Image};
                             </td>
                         </tr>
                         <tr>
-                            <th>Clients:</th>
+                            <th>Advertisers:</th>
                             <td>
                                 <ul>
-                                    <?php $image->project->campaign->clients()->each(function(Client $client) { ?>
+                                    <?php $image->project->campaign->advertisers()->each(function(Advertiser $advertiser) { ?>
                                     <li>
-                                        <a href="{{ route('clients.show', $client) }}"
-                                           class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">{{ $client->name }}</a>
+                                        <a href="{{ route('advertisers.show', $advertiser) }}"
+                                           class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">{{ $advertiser->name }}</a>
                                     </li>
                                     <?php }) ?>
                                 </ul>

@@ -15,8 +15,8 @@
                     <x-laravel.nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-laravel.nav-link>
-                    <x-laravel.nav-link :href="route('clients.index')" :active="request()->routeIs('clients.*')">
-                        Clients
+                    <x-laravel.nav-link :href="route('advertisers.index')" :active="request()->routeIs('advertisers.*')">
+                        Advertisers
                     </x-laravel.nav-link>
                     <x-laravel.nav-link :href="route('campaigns.index')" :active="request()->routeIs('campaigns.*')">Campaigns
                     </x-laravel.nav-link>
@@ -27,8 +27,8 @@
                     <x-laravel.nav-link :href="route('deliverables.index')" :active="request()->routeIs('deliverables.*')">
                         Deliverables
                     </x-laravel.nav-link>
-                    <x-laravel.nav-link :href="route('api.clients.index')">
-                        API Clients
+                    <x-laravel.nav-link :href="route('api.advertisers.index')">
+                        API Advertisers
                     </x-laravel.nav-link>
                 </div>
             </div>

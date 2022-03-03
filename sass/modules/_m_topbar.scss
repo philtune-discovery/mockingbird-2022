@@ -1,0 +1,30 @@
+.m_topbar {
+    @include t_card;
+    background: $lightCardBg;
+    color: $darkTxtClr;
+    padding: 12px 18px;
+    @include flexbox(split middle);
+    position: relative;
+    z-index: 1;
+    .search_label {
+        @include cover;
+        z-index: -1;
+    }
+    .c__search_form {
+        position: relative;
+        z-index: 1;
+        .text {
+            background: $lightBlue url(../img/search.svg) no-repeat top 50% left 16px / 16px;
+            color: $darkTxtClr;
+            font-size: 16px;
+            height: 40px;
+            width: 280px;
+            border-radius: 20px;
+            padding: 0 16px 0 40px;
+            &:focus {
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+}

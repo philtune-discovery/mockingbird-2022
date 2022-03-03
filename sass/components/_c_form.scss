@@ -81,9 +81,8 @@
         border-radius: 6px;
         border: none;
         background: #0b87f2 linear-gradient(to right, #0fbef1, #0b87f2);
-        color: $white;
-        text-transform: uppercase;
+        color: $lightTxtClr;
         font-size: 12px;
-        letter-spacing: 0.120em;
+        @extend %type-headline;
     }
 }

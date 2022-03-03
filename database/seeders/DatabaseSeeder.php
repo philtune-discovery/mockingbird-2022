@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Client;
+use App\Models\Advertiser;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -31,14 +31,14 @@ class DatabaseSeeder extends Seeder
             'user_id'     => $user->id
         ]);
         $project
-            ->attachTag('Arm & Hammer', 'client')
+            ->attachTag('Arm & Hammer', 'advertiser')
             ->attachTag('Puppy Bowl XVIII', 'campaign');
 
 
-//        $client = Client::create([
+//        $advertiser = Advertiser::create([
 //            'name' => 'Arm & Hammer'
 //        ]);
-//        $campaign = $client->campaigns()->create([
+//        $campaign = $advertiser->campaigns()->create([
 //            'name'    => 'Puppy Bowl XVIII',
 //            'user_id' => $user->id
 //        ]);

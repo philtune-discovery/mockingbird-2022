@@ -47,4 +47,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Project::class);
     }
+
+    public function getInitials():string
+    {
+        return array_reduce(explode(" ", $this->name), function(string $a, string $w) {
+            return $a . $w[0];
+        }, '');
+    }
 }

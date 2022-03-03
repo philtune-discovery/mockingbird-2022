@@ -1,6 +1,7 @@
 .l_app {
     $header_width: 344px;
-    padding: 32px 32px;
+    $padding: 32px;
+    padding: $padding $padding;
     position: relative;
     &-header {
         position: fixed;
@@ -8,9 +9,12 @@
         left: 0;
         bottom: 0;
         width: $header_width;
-        padding: 32px 32px;
+        padding: $padding $padding;
     }
     &-main {
-        margin-left: $header_width;
+        margin-left: $header_width - $padding;
+        &-topbar {
+            margin-bottom: $padding;
+        }
     }
 }

@@ -50,7 +50,7 @@ class CampaignController extends Controller
             'name' => ['required', 'string', 'max:255'],
         ]);
         $campaign->name = $request->name;
-        $campaign->clients()->sync($request->clients);
+        $campaign->advertisers()->sync($request->advertisers);
 
         $campaign->save();
 

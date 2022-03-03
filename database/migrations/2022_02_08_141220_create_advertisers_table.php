@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientCampaignTable extends Migration
+class CreateAdvertisersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateClientCampaignTable extends Migration
      */
     public function up()
     {
-        Schema::create('campaign_client', function (Blueprint $table) {
+        Schema::create('advertisers', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Campaign::class)->constrained();
-            $table->foreignIdFor(\App\Models\Client::class)->constrained();
+            $table->string('name')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateClientCampaignTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('campaign_client');
+        Schema::dropIfExists('advertisers');
     }
 }

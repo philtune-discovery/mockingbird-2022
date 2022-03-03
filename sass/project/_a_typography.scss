@@ -5,5 +5,13 @@ $fw-bold: 700;
 $fw-black: 900;
 
 %type-body {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Nunito Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+%type-headline {
+    text-transform: uppercase;
+    letter-spacing: 0.120em;
 }

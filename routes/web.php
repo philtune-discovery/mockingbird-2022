@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\{ApiClientController,
-    ClientController,
+use App\Http\Controllers\{ApiAdvertiserController,
+    AdvertiserController,
     CampaignController,
     DeliverableController,
     ImageController,
@@ -25,11 +25,11 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('advertisers', ClientController::class)->names('clients');
-    Route::get('advertisers/{client}/campaigns/create', [ClientController::class, 'create_campaign'])
-         ->name('clients.create_campaign');
-    Route::put('advertisers/{client}/campaigns', [ClientController::class, 'store_campaign'])
-         ->name('clients.store_campaign');
+    Route::resource('advertisers', AdvertiserController::class);
+    Route::get('advertisers/{advertiser}/campaigns/create', [AdvertiserController::class, 'create_campaign'])
+         ->name('advertisers.create_campaign');
+    Route::put('advertisers/{advertiser}/campaigns', [AdvertiserController::class, 'store_campaign'])
+         ->name('advertisers.store_campaign');
 
     Route::resource('campaigns', CampaignController::class);
     Route::get('campaigns/{campaign}/projects/create', [CampaignController::class, 'create_project'])

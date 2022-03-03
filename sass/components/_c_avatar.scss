@@ -1,0 +1,17 @@
+.c_avatar {
+    @include flexbox(middle center);
+    line-height: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background: linear-gradient(to right, #713cee, #c491f8);
+    color: $lightTxtClr;
+    outline: 2px solid $lightCardBg;
+    &:before {
+        content: attr(data-text);
+        font-weight: $fw-black;
+        font-size: 13px;
+        text-shadow: -1px -1px 1px dark(40);
+        //mix-blend-mode: color-burn;
+    }
+}

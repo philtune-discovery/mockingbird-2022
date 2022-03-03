@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ApiClientController;
+use App\Http\Controllers\ApiAdvertiserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +21,9 @@ Route::group(['middleware' => 'auth:sanctum', 'as' => 'api.'], function () {
         return $request->user();
     });
 
-    Route::apiResource('clients', ApiClientController::class);
+    Route::apiResource('advertisers', ApiAdvertiserController::class);
 
-    Route::put('clients/{client}/campaigns', [ApiClientController::class, 'store_campaign']);
+    Route::put('advertisers/{advertiser}/campaigns', [ApiAdvertiserController::class, 'store_campaign']);
 
 });
 

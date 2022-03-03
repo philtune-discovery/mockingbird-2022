@@ -23,7 +23,16 @@
         @include('modules.header')
 
     </div>
-    <div class="l_app-main"></div>
+    <div class="l_app-main">
+        <div class="l_app-main-topbar">
+
+            @include('modules.topbar')
+
+        </div>
+
+        @yield('main')
+
+    </div>
 </div>
 </body>
 </html>
