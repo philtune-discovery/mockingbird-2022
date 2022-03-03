@@ -1,25 +1,9 @@
 $ff-paragraph: 'Nunito Sans', sans-serif;
-$ff-heading: 'Oswald', sans-serif;
 
-$fw-light: 300;
 $fw-regular: 400;
-$fw-medium: 500;
-$fw-semibold: 600;
 $fw-bold: 700;
+$fw-black: 900;
 
-%type-paragraph {
-	font-family: $ff-paragraph;
-	font-style: normal;
-	font-weight: $fw-regular;
-}
-
-%type-headline {
-	font-family: $ff-heading;
-	font-weight: $fw-light;
-}
-
-%type-heading {
-	font-family: $ff-heading;
-	text-transform: uppercase;
-	line-height: 1.1;
+%type-body {
+    font-family: 'Nunito Sans', sans-serif;
 }

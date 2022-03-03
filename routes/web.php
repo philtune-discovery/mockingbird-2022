@@ -25,10 +25,10 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('clients', ClientController::class);
-    Route::get('clients/{client}/campaigns/create', [ClientController::class, 'create_campaign'])
+    Route::resource('advertisers', ClientController::class)->names('clients');
+    Route::get('advertisers/{client}/campaigns/create', [ClientController::class, 'create_campaign'])
          ->name('clients.create_campaign');
-    Route::put('clients/{client}/campaigns', [ClientController::class, 'store_campaign'])
+    Route::put('advertisers/{client}/campaigns', [ClientController::class, 'store_campaign'])
          ->name('clients.store_campaign');
 
     Route::resource('campaigns', CampaignController::class);

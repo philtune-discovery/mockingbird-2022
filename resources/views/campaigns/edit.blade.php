@@ -21,8 +21,8 @@ use App\Models\Client;
                         @method('PATCH')
                         @csrf
                         <div>
-                            <x-label for="name" value="Name"/>
-                            <x-input id="name" class="block mt-1 w-full" type="text" name="name"
+                            <x-laravel.label for="name" value="Name"/>
+                            <x-laravel.input id="name" class="block mt-1 w-full" type="text" name="name"
                                      :value="$campaign->name" required autofocus/>
                         </div>
                         <div>
@@ -35,14 +35,14 @@ use App\Models\Client;
                             </select>
                         </div>
                         <div class="flex items-center justify-start mt-4">
-                            <x-button>Update</x-button>
+                            <x-laravel.button>Update</x-laravel.button>
                         </div>
                     </form>
 
                     <form method="POST" action="{{ route('campaigns.destroy', $campaign) }}">
                         @method('DELETE')
                         @csrf
-                        <x-button>Delete</x-button>
+                        <x-laravel.button>Delete</x-laravel.button>
                     </form>
 
                 </div>

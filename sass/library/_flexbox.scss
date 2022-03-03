@@ -187,6 +187,7 @@
 			@include justify-content(space-between);
 		}
 	} @else {
+        @include flex-direction(row);
 		@if index($config, 'center') {
 			@include justify-content(center);
 		}

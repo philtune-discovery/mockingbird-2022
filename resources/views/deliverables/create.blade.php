@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
-                            <x-button>Create</x-button>
+                            <x-laravel.button>Create</x-laravel.button>
                         </div>
                     </form>
                 </div>

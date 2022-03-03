@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Campaign::class)
+            $table->foreignIdFor(Campaign::class)->nullable()
                   ->constrained();
             $table->foreignIdFor(User::class)
                   ->constrained();

@@ -1,0 +1,58 @@
+.m_header {
+    @include flexbox(column split);
+    height: 100%;
+    overflow: auto;
+    background: $headerBg;
+    color: $white;
+    border-radius: 8px;
+    padding: 32px 0;
+    .logo {
+        width: 76%;
+        margin: 0 auto 18px;
+    }
+    .main_nav {
+        &-link {
+            @include flexbox(middle);
+            column-gap: 18px;
+            height: 60px;
+            padding: 0 24px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.120em;
+            .icon {
+                height: 24px;
+                width: 24px;
+                text-align: center;
+            }
+            &.active {
+                background: #fd644f linear-gradient(to right, #f18d27, #fd644f);
+            }
+            position: relative;
+            z-index: 1;
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                background: #fd644f linear-gradient(#f18d27, #fd644f);
+                width: 0;
+                transition: width 250ms;
+            }
+            > * {
+                transition: transform 250ms;
+            }
+            &:hover, &:focus {
+                &:not(.active) {
+                    &:before {
+                        width: 8px;
+                    }
+                    > * {
+                        transform: translateX(8px);
+                    }
+                }
+            }
+        }
+    }
+}

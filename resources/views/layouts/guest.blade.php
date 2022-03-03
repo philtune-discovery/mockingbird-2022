@@ -16,9 +16,43 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
 </head>
-<body>
-<div class="font-sans text-gray-900 antialiased">
-    {{ $slot }}
+<body class="t_body">
+<div class="l_guest">
+    <div>
+        <a href="{{ route('welcome') }}">
+            {{ config('app.name', 'Laravel') }}
+        </a>
+    </div>
+
+    <div class="c_guest_card">
+
+    @yield('before')
+
+    <!-- Session Status -->
+        @if ($status = session('status'))
+            <div class="c__status">
+                {{ $status }}
+            </div>
+        @endif
+
+    <!-- Validation Errors -->
+        @if ($errors->any())
+            <div class="c__errors">
+                <p>
+                    Whoops! Something went wrong.
+                </p>
+
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        @yield('content')
+
+    </div>
 </div>
 </body>
 </html>

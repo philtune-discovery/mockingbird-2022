@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\Storage;
                         @csrf
 
                         <div>
-                            <x-label for="images" value="Images"/>
-                            <x-input id="images" type="file" name="images[]" multiple/>
+                            <x-laravel.label for="images" value="Images"/>
+                            <x-laravel.input id="images" type="file" name="images[]" multiple/>
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
-                            <x-button>Create</x-button>
+                            <x-laravel.button>Create</x-laravel.button>
                         </div>
                     </form>
                 </div>

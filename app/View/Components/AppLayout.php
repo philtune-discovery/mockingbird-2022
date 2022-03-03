@@ -14,6 +14,7 @@ class AppLayout extends Component
      */
     public function render():View
     {
+//        return view('layouts.laravel.app');
         return view('layouts.app');
     }
 }

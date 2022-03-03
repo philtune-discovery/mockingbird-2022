@@ -47,7 +47,7 @@ use App\Models\Deliverable;
                                       class="inline-flex">
                                     @method('DELETE')
                                     @csrf
-                                    <x-button>Delete</x-button>
+                                    <x-laravel.button>Delete</x-laravel.button>
                                 </form>
                             </td>
                         </tr>

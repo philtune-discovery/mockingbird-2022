@@ -1,36 +1,29 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="{{ route('welcome') }}">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.guest')
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
+@section('before')
+    <p>
+        This is a secure area of the application. Please confirm your password before continuing.
+    </p>
+@endsection
+
+@section('content')
+
+    <form method="POST" action="{{ route('password.confirm') }}" class="c_form">
+    @csrf
+
+    <!-- Password -->
+        <div class="form_row">
+            <label for="password" class="label">Password</label>
+
+            <input id="password" class="text"
+                     type="password"
+                     name="password"
+                     required autocomplete="current-password"/>
         </div>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <div class="form_row l--submit">
+            <button type="submit" class="button">Confirm</button>
+        </div>
+    </form>
 
-        <form method="POST" action="{{ route('password.confirm') }}">
-            @csrf
-
-            <!-- Password -->
-            <div>
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <div class="flex justify-end mt-4">
-                <x-button>
-                    {{ __('Confirm') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+@endsection
