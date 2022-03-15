@@ -1,39 +1,48 @@
 <?php
+use Spatie\Tags\Tag;
+
 /**
- * @var Advertiser $advertiser
+ * @var Tag $tag
  */
-
-use App\Models\Advertiser;
-
 ?>
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Advertiser: {{ $advertiser->name }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
+@section('main')
 
-                    <form method="POST" action="{{ route('advertisers.update', $advertiser) }}">
-                        @method('PATCH')
-                        @csrf
-                        <div>
-                            <x-laravel.label for="name" :value="__('Name')"/>
-                            <x-laravel.input id="name" class="block mt-1 w-full" type="text" name="name"
-                                     :value="$advertiser->name" required autofocus/>
-                        </div>
-                        <div class="flex items-center justify-start mt-4">
-                            <a class="inline-flex items-center px-4 py-2 bg-gray-100 border border-transparent rounded-md font-semibold text-xs text-gray-900 uppercase tracking-widest active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150 mr-2" href="{{ route('advertisers.show', $advertiser) }}">Cancel</a>
-                            <x-laravel.button>Update</x-laravel.button>
-                        </div>
-                    </form>
+    <h1 class="title">
+        Update Advertiser:&nbsp;
+        <span class="sub"><?= $tag->name ?></span>
+    </h1>
 
+    <div class="l_flex_middle_center">
+
+        <div class="c_card">
+
+            <form class="c_form" method="POST" action="<?= route('advertisers.update', $tag->slug) ?>">
+                @method('PATCH')
+                @csrf
+
+                <div class="stack_row">
+                    <label for="name" class="label">Name</label>
+
+                    <input id="name" class="text" type="text" name="name" value="<?= $tag->name ?>" required autofocus/>
                 </div>
-            </div>
+
+                <div class="stack_row l--submit">
+                    <button type="submit" class="button">Update</button>
+                </div>
+            </form>
+            <form class="c_form" method="POST" action="<?= route('advertisers.destroy', $tag->slug) ?>">
+                @method('DELETE')
+                @csrf
+
+                <div class="stack_row l--submit">
+                    <button type="submit" class="button delete">Delete</button>
+                </div>
+            </form>
+
         </div>
+
     </div>
-</x-app-layout>
+
+@endsection

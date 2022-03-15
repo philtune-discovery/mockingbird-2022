@@ -1,0 +1,70 @@
+%c_card {
+    @include t_card;
+    background: $lightCardBg;
+    position: relative;
+    @include margin(16px);
+    p, ul, ol, .c_form {
+        @include margin(16px);
+    }
+    .c__errors {
+        color: $red;
+        ul {
+            list-style: disc inside;
+        }
+    }
+    .c__status {
+        color: $green;
+    }
+    .heading {
+        font-weight: $fw-black;
+        letter-spacing: 0.120em;
+        font-size: 26px;
+        @include margin(16px);
+        small {
+            font-size: 14px;
+            font-weight: $fw-regular;
+        }
+    }
+}
+
+.c_guest_card {
+    @extend %c_card;
+    padding: 20px 24px;
+    width: 448px;
+}
+
+.c_card {
+    @extend %c_card;
+    min-width: 448px;
+    padding: 16px 24px;
+    .l__topbar {
+        @include flexbox(middle split wrap);
+        column-gap: 16px;
+        > *:first-child, > *:last-child {
+            flex: 1;
+        }
+        > *:last-child {
+            text-align: right;
+        }
+    }
+    .l__topbar, > ul, > p {
+        @include margin(16px);
+    }
+    .tag_list {
+        @include flexbox(middle wrap);
+        gap: 12px;
+    }
+    &.t--project {
+        padding-left: 32px;
+        &:before {
+            background: linear-gradient(168deg, #1cc1f1, #0b85f2);
+        }
+    }
+    .link {
+        color: $linkClr;
+    }
+    .name {
+        font-weight: $fw-black;
+        font-size: 18px;
+    }
+}

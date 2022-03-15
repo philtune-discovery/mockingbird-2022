@@ -1,5 +1,4 @@
 .m_header {
-    @include t_card;
     @include flexbox(column split);
     height: 100%;
     overflow: auto;
@@ -53,5 +52,9 @@
                 }
             }
         }
+    }
+    @include desktopMin {
+        border-radius: 8px;
+        box-shadow: 0 3px 6px -2px dark(10), 0 6px 8px -2px dark(10);
     }
 }

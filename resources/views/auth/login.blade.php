@@ -6,7 +6,7 @@
     @csrf
 
     <!-- Email Address -->
-        <div class="form_row">
+        <div class="stack_row">
             <label for="email" class="label">Email</label>
 
             <input id="email" class="text"
@@ -18,7 +18,7 @@
         </div>
 
         <!-- Password -->
-        <div class="form_row">
+        <div class="stack_row">
             <label for="password" class="label">Password</label>
 
             <input id="password" class="text"
@@ -29,7 +29,7 @@
         </div>
 
         <!-- Remember Me -->
-        <div class="form_row">
+        <div class="stack_row">
             <label for="remember_me" class="label">
                 <input id="remember_me" class="checkbox" type="checkbox"
                        data-class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -38,7 +38,7 @@
             </label>
         </div>
 
-        <div class="form_row l--submit">
+        <div class="stack_row l--submit">
             <a class="link" href="{{ route('register') }}">Not Registered?</a>
             @if (Illuminate\Support\Facades\Route::has('password.request'))
                 <a class="link" href="{{ route('password.request') }}">Forgot your password?</a>

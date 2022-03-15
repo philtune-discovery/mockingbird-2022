@@ -7,11 +7,7 @@
     background: linear-gradient(to right, #713cee, #c491f8);
     color: $lightTxtClr;
     outline: 2px solid $lightCardBg;
-    &:before {
-        content: attr(data-text);
-        font-weight: $fw-black;
-        font-size: 13px;
-        text-shadow: -1px -1px 1px dark(40);
-        //mix-blend-mode: color-burn;
-    }
+    font-weight: $fw-black;
+    font-size: 13px;
+    text-shadow: -1px -1px 1px dark(40);
 }

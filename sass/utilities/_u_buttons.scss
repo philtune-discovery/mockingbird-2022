@@ -1,0 +1,34 @@
+.u_advertiser_tag {
+    @include flexbox(inline middle center);
+    background: $advertiserTagBg;
+    &:hover, &:focus {
+        background: lighten($advertiserTagBg, 3);
+    }
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+@mixin button {
+    @include flexbox(inline middle center);
+    height: 34px;
+    padding: 0 16px;
+    border-radius: 6px;
+    border: none;
+    background: #0b87f2 linear-gradient(to right, #0fbef1, #0b87f2);
+    &.delete {
+        background: #fc2222 linear-gradient(to right, #fc6845, #fc2222);
+    }
+    color: $lightTxtClr;
+    font-size: 12px;
+    @extend %type-headline;
+    white-space: nowrap;
+}
+
+.u_button {
+    @include button;
+}

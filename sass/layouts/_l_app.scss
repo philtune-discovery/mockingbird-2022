@@ -1,5 +1,5 @@
 .l_app {
-    $header_width: 344px;
+    $header_width: 280px;
     $padding: 32px;
     padding: $padding $padding;
     position: relative;
@@ -8,13 +8,27 @@
         top: 0;
         left: 0;
         bottom: 0;
-        width: $header_width;
-        padding: $padding $padding;
     }
     &-main {
-        margin-left: $header_width - $padding;
         &-topbar {
             margin-bottom: $padding;
+        }
+    }
+    @include desktopMin {
+        &-header {
+            width: $header_width + ( $padding * 2 );
+            padding: $padding $padding;
+        }
+        &-main {
+            margin-left: $header_width + $padding;
+        }
+    }
+    @include tabletMax {
+        &-header {
+            width: $header-width;
+        }
+        &-main {
+            margin-left: $header_width;
         }
     }
 }

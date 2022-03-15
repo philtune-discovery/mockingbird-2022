@@ -1,3 +1,7 @@
 .u_flex_middle_split {
     @include flexbox(middle split);
+    .inner {
+        @include flexbox(middle);
+        column-gap: 24px;
+    }
 }

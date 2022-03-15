@@ -1,0 +1,64 @@
+$tooltipBackground: $darkGray;
+%tooltip-container {
+    position: relative;
+    z-index: 1;
+    &:after {
+        content: "";
+        @extend %tooltip-triangle;
+    }
+    &:hover:after {
+        opacity: 1;
+    }
+}
+
+%tooltip-bubble, %tooltip-triangle {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 150ms 250ms;
+    left: 50%;
+    transform: translate(-50%, -3px);
+    pointer-events: none;
+}
+
+%tooltip-bubble {
+    position: absolute;
+    bottom: 100%;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: $fw-regular;
+    background: $tooltipBackground;
+    color: $white;
+    line-height: 16px;
+    padding: 4px 14px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+%tooltip-triangle {
+    border-top: 6px solid $tooltipBackground;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    top: 0;
+}
+
+.u_tooltip {
+    @extend %tooltip-container;
+    &-text {
+        @extend %tooltip-bubble;
+    }
+    &:hover &-text {
+        opacity: 1;
+    }
+}
+
+[data-title] {
+    @extend %tooltip-container;
+    &:before {
+        content: attr(data-title);
+        @extend %tooltip-bubble;
+    }
+    &:hover:before {
+        opacity: 1;
+    }
+}

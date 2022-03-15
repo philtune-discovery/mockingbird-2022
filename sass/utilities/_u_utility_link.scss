@@ -1,0 +1,14 @@
+.u_utility_link {
+    font-size: 13px;
+    text-decoration: underline;
+    color: $linkClr;
+    letter-spacing: 0.02em;
+    &:hover {
+        text-decoration: none;
+    }
+    &.t--active {
+        text-decoration: none;
+        color: $darkTxtClr;
+        font-weight: $fw-bold;
+    }
+}

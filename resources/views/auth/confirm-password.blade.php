@@ -12,7 +12,7 @@
     @csrf
 
     <!-- Password -->
-        <div class="form_row">
+        <div class="stack_row">
             <label for="password" class="label">Password</label>
 
             <input id="password" class="text"
@@ -21,7 +21,7 @@
                      required autocomplete="current-password"/>
         </div>
 
-        <div class="form_row l--submit">
+        <div class="stack_row l--submit">
             <button type="submit" class="button">Confirm</button>
         </div>
     </form>

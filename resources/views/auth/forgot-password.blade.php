@@ -13,14 +13,14 @@
     @csrf
 
     <!-- Email Address -->
-        <div class="form_row">
+        <div class="stack_row">
             <label for="email" class="label">Email</label>
 
             <input id="email" class="text" type="email" name="email" value="{{old('email')}}" required
                    autofocus/>
         </div>
 
-        <div class="form_row l--submit">
+        <div class="stack_row l--submit">
             <a class="link" href="{{ route('login') }}">Nevermind</a>
 
             <button type="submit" class="button">Email Password Reset Link</button>

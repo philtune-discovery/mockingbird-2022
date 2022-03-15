@@ -1,30 +1,31 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Create New Advertiser
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <form method="POST" action="{{ route('advertisers.store') }}">
-                        @csrf
+@section('main')
 
-                        <div>
-                            <x-laravel.label for="name" :value="__('Name')"/>
+    <h1 class="title">
+        Create New Advertiser
+    </h1>
 
-                            <x-laravel.input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
-                                     required autofocus/>
-                        </div>
+    <div class="l_flex_middle_center">
 
-                        <div class="flex items-center justify-end mt-4">
-                            <x-laravel.button>Create</x-laravel.button>
-                        </div>
-                    </form>
+        <div class="c_card">
+
+            <form class="c_form" method="POST" action="{{ route('advertisers.store') }}">
+                @csrf
+
+                <div class="stack_row">
+                    <label for="name" class="label">Name</label>
+
+                    <input id="name" class="text" type="text" name="name" value="{{old('name')}}" required autofocus/>
                 </div>
-            </div>
+
+                <div class="stack_row l--submit">
+                    <button type="submit" class="button">Create</button>
+                </div>
+            </form>
+
         </div>
+
     </div>
-</x-app-layout>
+
+@endsection

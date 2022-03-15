@@ -1,4 +1,13 @@
 @mixin t_card {
     border-radius: 8px;
     box-shadow: 0 3px 6px -2px dark(10), 0 6px 8px -2px dark(10);
+    &:before {
+        content: "";
+        border-radius: 8px 0 0 8px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 8px;
+    }
 }

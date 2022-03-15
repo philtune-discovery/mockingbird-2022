@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\{ApiAdvertiserController,
-    AdvertiserController,
+use App\Http\Controllers\{AdvertiserController,
     CampaignController,
     DeliverableController,
     ImageController,
-    ProjectController};
+    ProjectController
+};
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +20,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => ['auth', 'verified']], function() {
+Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('advertisers', AdvertiserController::class);
+    Route::resource('advertisers', AdvertiserController::class)
+//         ->parameter('advertisers', 'tag:slug')
+    ;
     Route::get('advertisers/{advertiser}/campaigns/create', [AdvertiserController::class, 'create_campaign'])
          ->name('advertisers.create_campaign');
     Route::put('advertisers/{advertiser}/campaigns', [AdvertiserController::class, 'store_campaign'])
